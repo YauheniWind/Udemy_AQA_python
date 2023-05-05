@@ -1,7 +1,8 @@
-from pageElements.Header import Header
+from pageElements.HeaderPage import HeaderPage
+
 
 def test_logo(browser, open_main_page):
-    logo_test = Header(browser)
+    logo_test = HeaderPage(browser)
 
     logo_test.waiting_logo()
     logo_test.click_on_logo()
