@@ -36,14 +36,8 @@ class Helper:
         return self.driver.find_element(*xpath)
 
     def click_element(self, locator):
-        selector = self.wait_for_element(locator)
-        self.driver.execute_script("arguments[0].scrollIntoView", selector)
-        selector.click()
-
-    def wait_for_element(self, selector):
-        return WebDriverWait(self.driver, 10).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, selector))
-        )
+        self.driver.execute_script("arguments[0].scrollIntoView", locator)
+        locator.click()
 
     def assert_that_element_is_selected(self, selector):
         return self.get_locator_by_css(selector).is_selected()
@@ -109,3 +103,8 @@ class Helper:
 
     def current_url(self):
         return self.driver.current_url
+
+    def mouse_moving(self, locator):
+        element = self.waiting_element(locator)
+        action = ActionChains(self.driver)
+        return action.move_to_element(element).perform()
