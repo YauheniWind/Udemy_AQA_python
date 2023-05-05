@@ -1,0 +1,8 @@
+venv
+.idea/
+.pytest_cache/
+core/hw_6/new_one.py
+*__pycache__
+geckodriver.log
+*.pdf
+*.jpeg
