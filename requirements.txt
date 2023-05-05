@@ -10,3 +10,4 @@ flake8==6.0.0
 selenium
 pytest-xdist
 pytest-rerunfailures
+webdriver-manager
