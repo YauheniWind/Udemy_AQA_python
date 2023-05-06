@@ -1,4 +1,4 @@
-class HeaderObject:
+class HeaderLocators:
     LOGO = '//*[@class="header--flex-middle--2QeVR header--logo--rd7-H"]'
 
     CATEGORIES = '//*[@class="popper-module--popper--2BpLn header--gap-button--1p5bX"]'
