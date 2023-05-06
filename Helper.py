@@ -28,7 +28,7 @@ class Helper:
         return self.driver.find_element(*class_name)
 
     def get_locator_by_contains(self, selector):
-        xpath = (By.XPATH, f'//div[contains(@class,"{selector}")]')
+        xpath = (By.XPATH, f'//*[contains(@class,"{selector}")]')
         return self.driver.find_element(*xpath)
 
     def get_locator_by_contains_text(self, text):
