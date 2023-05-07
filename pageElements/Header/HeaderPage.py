@@ -1,5 +1,5 @@
 from Helper import Helper
-from pageElements.HeaderLocators import HeaderLocators
+from pageElements.Header.HeaderLocators import HeaderLocators
 
 
 class HeaderPage(Helper):
