@@ -1,4 +1,4 @@
-from pageElements.HeaderPage import HeaderPage
+from pageElements.Header.HeaderPage import HeaderPage
 
 
 def test_logo(browser, open_main_page):
