@@ -8,10 +8,16 @@ class Helper:
     def __init__(self, driver):
         self.driver = driver
 
-    def get_locator_by_xpath(self, selector):
+    def get_locator_by_xpath(self, selector, index=0):
         # '//*[@id="userName"]'
         xpath = (By.XPATH, selector)
-        return self.driver.find_element(*xpath)
+        elements = self.driver.find_elements(*xpath)
+        return elements[index]
+
+
+    def get_elements_by_xpath(self, selector, item=0):
+        return self.driver.find_elements(By.XPATH, selector, item)
+
 
     def get_locator_by_css(self, selector):
         # .class_name
@@ -43,7 +49,16 @@ class Helper:
         return self.get_locator_by_css(selector).is_selected()
 
     def scroll_to_element(self, locator):
-        return ActionChains(self.driver).scroll_to_element(locator).perform()
+        iframe = self.get_locator_by_xpath(locator)
+        ActionChains(self.driver) \
+            .scroll_to_element(iframe) \
+            .perform()
+        # return ActionChains(self.driver).scroll_to_element(locator).perform()
+
+    def scroll_to_element_offset(self, locator, scroll_offset):
+        actions = ActionChains(self.driver)
+        actions.move_to_element(locator).perform()
+        return self.driver.execute_script(f"window.scrollBy(0, {scroll_offset});")
 
     def remove_element_from_DOM(self, locator):
         return self.driver.execute_script("arguments[0].remove();", locator)
@@ -58,15 +73,16 @@ class Helper:
         if current_check != value:
             element.click()
 
-    def click_button(self, locator):
-        element = self.get_locator_by_xpath(locator)
+    def click_button(self, locator, index=0):
+        element = self.get_locator_by_xpath(locator, index)
         element.click()
 
     def switch_to_iframe(self, locator):
         return self.driver.switch_to.frame(self.driver.find_element(By.XPATH, locator))
 
-    def get_text(self, locator):
-        return self.get_locator_by_xpath(locator).text
+    def get_element_text(self, locator):
+        element = self.driver.find_element(*locator)
+        return element.text
 
     def enter_text_and_get_attribute_value(self, locator, text):
         element = self.get_locator_by_xpath(locator)
