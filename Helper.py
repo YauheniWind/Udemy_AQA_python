@@ -1,3 +1,4 @@
+from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
@@ -14,10 +15,8 @@ class Helper:
         elements = self.driver.find_elements(*xpath)
         return elements[index]
 
-
-    def get_elements_by_xpath(self, selector, item=0):
-        return self.driver.find_elements(By.XPATH, selector, item)
-
+    def get_element_by_xpath(self, selector):
+        return self.driver.find_element(By.XPATH, selector)
 
     def get_locator_by_css(self, selector):
         # .class_name
@@ -50,9 +49,7 @@ class Helper:
 
     def scroll_to_element(self, locator):
         iframe = self.get_locator_by_xpath(locator)
-        ActionChains(self.driver) \
-            .scroll_to_element(iframe) \
-            .perform()
+        ActionChains(self.driver).scroll_to_element(iframe).perform()
         # return ActionChains(self.driver).scroll_to_element(locator).perform()
 
     def scroll_to_element_offset(self, locator, scroll_offset):
@@ -95,6 +92,8 @@ class Helper:
         element = self.get_locator_by_xpath(locator)
         if value == "class":
             return element.get_attribute("class")
+        elif value == "placeholder":
+            return element.get_attribute("placeholder")
         else:
             return element.get_attribute("value")
 
@@ -124,3 +123,22 @@ class Helper:
         element = self.waiting_element(locator)
         action = ActionChains(self.driver)
         return action.move_to_element(element).perform()
+
+    def element_is_displayed(self, locator):
+        element = self.get_locator_by_xpath(locator)
+        if element.is_displayed():
+            return True
+        return False
+
+    def delete_all_cookies(self):
+        self.driver.delete_all_cookies()
+
+    def switch_to_new_window(self):
+        original_window = self.driver.current_window_handle
+        new_window = [
+            window for window in self.driver.window_handles if window != original_window
+        ][0]
+        return self.driver.switch_to.window(new_window)
+
+    def alert_text(self):
+        return Alert(self.driver).text
