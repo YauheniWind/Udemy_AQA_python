@@ -1,6 +1,7 @@
 from Helper import Helper
 from pageElements.MainPage.MainPageLocators import MainPageLocators
 
+
 class MainPage(Helper):
     def __init__(self, driver):
         super().__init__(driver)
@@ -41,5 +42,9 @@ class MainPage(Helper):
         self.click_button(self.elements.SECOND_BUTTON_IN_SKILLS_HUB, 1)
 
     def assert_text_from_skill_hub(self):
-        assert not self.get_locator_by_contains_text(self.elements.TITLE_PYTHON).is_displayed()
-        assert self.get_locator_by_contains_text(self.elements.TITLE_EXCEL).is_displayed()
+        assert not self.get_locator_by_contains_text(
+            self.elements.TITLE_PYTHON
+        ).is_displayed()
+        assert self.get_locator_by_contains_text(
+            self.elements.TITLE_EXCEL
+        ).is_displayed()

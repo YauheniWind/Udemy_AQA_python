@@ -24,7 +24,9 @@ class MainPageLocators:
 
     SKILLS_HUB = '//*[@data-purpose="skills-hub-unit"]'
     FIRST_BUTTON_IN_SKILLS_HUB = '//*[@id="u47-tabs--2-tab-0"]'
-    SECOND_BUTTON_IN_SKILLS_HUB = '//*[contains(@class,"tabs-module--nav-button-container--u4wUp")]'
+    SECOND_BUTTON_IN_SKILLS_HUB = (
+        '//*[contains(@class,"tabs-module--nav-button-container--u4wUp")]'
+    )
 
     HEAD_SHOT_TEXT_SKILL_HUB = (
         '//*[@class="ud-heading-xl headshot-banner--tagline--25noN"]'
@@ -33,5 +35,5 @@ class MainPageLocators:
         '//*[@id="u47-tabs--2-content-0"]/div/div[1]/div/h2'
     )
 
-    TITLE_PYTHON = 'Expand your career opportunities with Python'
-    TITLE_EXCEL = 'Analyze and visualize data with Excel'
+    TITLE_PYTHON = "Expand your career opportunities with Python"
+    TITLE_EXCEL = "Analyze and visualize data with Excel"
