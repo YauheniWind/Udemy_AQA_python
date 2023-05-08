@@ -63,3 +63,4 @@ def open_page(browser):
 @pytest.fixture
 def open_main_page(browser):
     browser.get("https://www.udemy.com/?persist_locale=&locale=en_US")
+    browser.fullscreen_window()
