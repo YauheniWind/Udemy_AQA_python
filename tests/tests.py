@@ -51,6 +51,15 @@ class TestTeachPage:
         banner_test.click_get_started()
         banner_test.assert_modal_window_is_displayed()
 
+    def test_how_to_begin(self, browser, open_teach_page):
+        banner_test = TeachPage(browser)
+
+        banner_test.scroll_to_banner_begin()
+        banner_test.click_on_video()
+        banner_test.assert_banner_is_change_on_video()
+        banner_test.click_on_course()
+        banner_test.assert_banner_is_change_on_course()
+
 
 class TestLogIn:
     def test_google_button(self, browser, open_log_in_page):
@@ -85,3 +94,10 @@ class TestSingUp:
 
         sing_up.click_sing_up()
         sing_up.assert_registration_form()
+
+    def test_sign_up(self, browser, open_sing_up_page):
+        sing_up = SingUpPage(browser)
+
+        sing_up.fill_registration_form()
+        sing_up.click_sing_up()
+        sing_up.assert_change_page()

@@ -18,4 +18,19 @@ class TeachPage(Helper):
         self.click_button(self.elements.GET_START_BUTTON)
 
     def assert_modal_window_is_displayed(self):
-        assert self.get_locator_by_xpath(self.elements.BECOME_INSTRUCTOR)
+        assert self.waiting_disappearance_element(self.elements.BECOME_INSTRUCTOR)
+
+    def scroll_to_banner_begin(self):
+        self.scroll_to_element(self.elements.HOW_TO_BEGIN)
+
+    def click_on_video(self):
+        self.click_button(self.elements.SECOND_BUTTON)
+
+    def click_on_course(self):
+        self.click_button(self.elements.SECOND_BUTTON, 1)
+
+    def assert_banner_is_change_on_video(self):
+        assert self.get_locator_by_xpath(self.elements.BANNER_INFO, 1)
+
+    def assert_banner_is_change_on_course(self):
+        assert self.get_locator_by_xpath(self.elements.BANNER_INFO, 2)
