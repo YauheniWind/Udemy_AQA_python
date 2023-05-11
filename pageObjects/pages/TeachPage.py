@@ -1,5 +1,5 @@
 from Helper import Helper
-from pageElements.TeachPage.TeachLocators import TeachLocators
+from pageObjects.locators.TeachLocators import TeachLocators
 
 
 class TeachPage(Helper):

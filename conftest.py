@@ -1,10 +1,16 @@
 import pytest
+import time
+import os
 
+from allure_commons import fixture
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.core.utils import ChromeType
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
+
+from datetime import datetime
+from selenium import webdriver as selenium_webdriver
 from selenium.webdriver.chrome.options import Options
 
 
@@ -95,7 +101,7 @@ def open_teach_page(browser):
 @pytest.fixture()
 def open_log_in_page(browser):
     browser.get(
-        "https://www.udemy.com/join/login-popup/?locale=en_US&response_type=html&next=https%3A%2F%2Fwww.udemy.com%2F%3Fpersist_locale%3D%26locale%3Den_US"
+        'https://www.udemy.com/join/login-popup/?persist_locale=&locale=en_US'
     )
     browser.maximize_window()
 
@@ -106,3 +112,53 @@ def open_sing_up_page(browser):
         "https://www.udemy.com/join/signup-popup/?locale=en_US&response_type=html&next=https%3A%2F%2Fwww.udemy.com%2Fjoin%2Flogin-popup%2F%3Flocale%3Den_US%26response_type%3Dhtml%26next%3Dhttps%253A%252F%252Fwww.udemy.com%252F%253Fpersist_locale%253D%2526locale%253Den_US"
     )
     browser.maximize_window()
+
+
+# set up a hook to be able to check if a test has failed
+# @pytest.hookimpl(tryfirst=True, hookwrapper=True)
+# def pytest_runtest_makereport(item, call):
+#     # execute all other hooks to obtain the report object
+#     outcome = yield
+#     rep = outcome.get_result()
+#
+#     # set a report attribute for each phase of a call, which can
+#     # be "setup", "call", "teardown"
+#
+#     setattr(item, "rep_" + rep.when, rep)
+#
+# @pytest.hookimpl(tryfirst=True, hookwrapper=True)
+# def pytest_runtest_makereport(item, call):
+#     report = (yield).get_result()
+#     if report.when == "call":
+#         setattr(item, "report", report)
+#
+# # check if a test has failed
+# @pytest.fixture(scope='function', autouse=True)
+# def make_failed_screenshot(request):
+#     yield
+#     if request.node.report:  # See pytest_runtest_makereport() in conftest.py
+#         if request.node.report.failed:
+#             # TODO: refactor the next string to use path from the config: request.config.conf.pytest.screenshots
+#             browser = webdriver.Chrome
+#             path = 'p3_failed_tests_data/'
+#             make_dir(path)
+#             file_path = 'p3_failed_tests_data/' + f'{request.node.name}.png'
+#             file_name = path + f'{request.node.name}.png'
+#             browser.save_screenshot("/tests")
+#             print('\nError path ', browser.current_url)
+#             print('\nScreenshot ', file_path)
+#
+#
+# # make a screenshot with a name of the test, date and time
+# def take_screenshot(driver, nodeid):
+#     time.sleep(1)
+#     file_name = f'MY_{datetime.today().strftime("%Y-%m-%d_%H:%M")}.png'.replace(
+#         "/", "_"
+#     ).replace("::", "__")
+#     print(file_name)
+#     driver.save_screenshot(file_name)
+#
+#
+# def make_dir(directory_name):
+#     if not os.path.exists(directory_name):
+#         os.makedirs(directory_name)

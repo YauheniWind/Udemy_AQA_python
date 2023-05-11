@@ -1,12 +1,12 @@
 from Helper import Helper
-from pageElements.MainPage.MainPageLocators import MainPageLocators
+from pageObjects.locators.MainLocators import MainLocators
 
 
 class MainPage(Helper):
     def __init__(self, driver):
         super().__init__(driver)
 
-        self.elements = MainPageLocators()
+        self.elements = MainLocators()
 
     # Header
     def find_element_logo(self):

@@ -1,5 +1,5 @@
 from Helper import Helper
-from pageElements.BusinessPage.BusinessLocators import BusinessLocators
+from pageObjects.locators.BusinessLocators import BusinessLocators
 
 
 class BusinessPage(Helper):

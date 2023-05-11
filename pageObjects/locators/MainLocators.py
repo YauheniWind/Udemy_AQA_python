@@ -1,4 +1,4 @@
-class MainPageLocators:
+class MainLocators:
     SMART_BAR = '//*[@data-purpose="smart-bar"]'
     SMART_BAR_BUTTON = '//*[@data-purpose="smart-bar-hide"]'
 

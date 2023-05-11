@@ -1,8 +1,10 @@
-from pageElements.LogInPage.LogInPage import LogInPage
-from pageElements.MainPage.MainPage import MainPage
-from pageElements.BusinessPage.BusinessPage import BusinessPage
-from pageElements.SingUpPage.SingUpPage import SingUpPage
-from pageElements.TeachPage.TeachPage import TeachPage
+import time
+
+from pageObjects.pages.LogInPage import LogInPage
+from pageObjects.pages.MainPage import MainPage
+from pageObjects.pages.BusinessPage import BusinessPage
+from pageObjects.pages.SingUpPage import SingUpPage
+from pageObjects.pages.TeachPage import TeachPage
 
 
 class TestMainPage:
@@ -56,7 +58,25 @@ class TestLogIn:
 
         google_button.click_google_button()
         google_button.switch_to_google()
-        google_button.google_title()
+        google_button.assert_google_title()
+
+    def test_facebook_button(self, browser, open_log_in_page):
+        facebook_button = LogInPage(browser)
+
+        facebook_button.click_facebook_button()
+        facebook_button.assert_facebook_page()
+
+    def test_apple_button(self, browser, open_log_in_page):
+        apple_button = LogInPage(browser)
+
+        apple_button.click_apple_button()
+        apple_button.assert_apple_title()
+
+    def test_log_in_button(self, browser, open_log_in_page):
+        log_in_button = LogInPage(browser)
+
+        log_in_button.click_log_in()
+        log_in_button.assert_page_not_change()
 
 
 class TestSingUp:
