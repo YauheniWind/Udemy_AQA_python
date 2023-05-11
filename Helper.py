@@ -49,8 +49,7 @@ class Helper:
 
     def scroll_to_element(self, locator):
         iframe = self.get_locator_by_xpath(locator)
-        ActionChains(self.driver).scroll_to_element(iframe).perform()
-        # return ActionChains(self.driver).scroll_to_element(locator).perform()
+        return ActionChains(self.driver).scroll_to_element(iframe).perform()
 
     def scroll_to_element_offset(self, locator, scroll_offset):
         actions = ActionChains(self.driver)
@@ -142,3 +141,7 @@ class Helper:
 
     def alert_text(self):
         return Alert(self.driver).text
+
+    def send_keys(self, locator, text):
+        key = self.get_locator_by_xpath(locator)
+        return key.send_keys(text)
