@@ -34,3 +34,12 @@ class TeachPage(Helper):
 
     def assert_banner_is_change_on_course(self):
         assert self.get_locator_by_xpath(self.elements.BANNER_INFO, 2)
+
+    def scroll_to_comments_from_teacher(self):
+        self.scroll_to_element(self.elements.COMMENTS_FROM_TEACHERS_BANNER)
+
+    def click_next_comment(self):
+        self.click_button(self.elements.NEXT_COMMENT_BUTTON)
+
+    def assert_name_of_teachers(self):
+        assert self.get_locator_by_xpath(self.elements.INFO_CART)

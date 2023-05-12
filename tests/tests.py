@@ -60,6 +60,14 @@ class TestTeachPage:
         banner_test.click_on_course()
         banner_test.assert_banner_is_change_on_course()
 
+    def test_teachers_comments(self, browser, open_teach_page):
+        teachers_comments = TeachPage(browser)
+
+        teachers_comments.scroll_to_comments_from_teacher()
+        teachers_comments.click_next_comment()
+        teachers_comments.assert_name_of_teachers()
+
+
 
 class TestLogIn:
     def test_google_button(self, browser, open_log_in_page):
