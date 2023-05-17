@@ -145,3 +145,7 @@ class Helper:
     def send_keys(self, locator, text):
         key = self.get_locator_by_xpath(locator)
         return key.send_keys(text)
+
+    def display_none(self, locator):
+        element = self.get_locator_by_xpath(locator)
+        return self.driver.execute_script("arguments[0].style.display = 'none';", element)
