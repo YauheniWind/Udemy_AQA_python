@@ -43,3 +43,16 @@ class TeachPage(Helper):
 
     def assert_name_of_teachers(self):
         assert self.get_locator_by_xpath(self.elements.INFO_CART)
+
+    def none_element(self):
+        self.display_none(self.elements.CONTAINER_COOKIE)
+
+    def scroll_to_support_teacher(self):
+        self.scroll_to_element(self.elements.HELP_FOR_TEACHER)
+
+    def click_support_teacher(self):
+        self.click_button(self.elements.NEED_MORE_DETAILS_BUTTON)
+
+    def switch_to_support_teacher_window(self):
+        self.switch_to_new_window()
+        assert self.current_url() != 'https://www.udemy.com/teaching/?ref=teach_header'

@@ -67,6 +67,13 @@ class TestTeachPage:
         teachers_comments.click_next_comment()
         teachers_comments.assert_name_of_teachers()
 
+    def test_support_teacher(self, browser, open_teach_page):
+        support_teacher = TeachPage(browser)
+
+        support_teacher.none_element()
+        support_teacher.scroll_to_support_teacher()
+        support_teacher.click_support_teacher()
+        support_teacher.switch_to_support_teacher_window()
 
 
 class TestLogIn:

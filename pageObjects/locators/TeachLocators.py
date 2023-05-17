@@ -1,4 +1,6 @@
 class TeachLocators:
+    CONTAINER_COOKIE = '//*[@class="ot-sdk-container"]'
+
     MAIN_BANNER = '//*[@class="hero-header--billboard-container--sYvLn"]'
     GET_START_BUTTON = '//*[@data-purpose="bai-cta"]'
     BECOME_INSTRUCTOR = '//*[@data-module-id="auth"]'
@@ -11,3 +13,6 @@ class TeachLocators:
     NEXT_COMMENT_BUTTON = '//*[@data-pager-type="next"]'
     PREV_COMMENT_BUTTON = '//*[@data-pager-type="prev"]'
     INFO_CART = '//*[@data-index="1"]'
+
+    HELP_FOR_TEACHER = '//*[@class="teach-page__pale-container"]'
+    NEED_MORE_DETAILS_BUTTON = '//*[@class="ud-btn ud-btn-large ud-btn-ghost ud-heading-md ud-link-underline here-to-help--cta--1DDFs"]'
