@@ -76,7 +76,7 @@ class TestTeachPage:
         support_teacher.none_element()
         support_teacher.scroll_to_support_teacher()
         support_teacher.click_support_teacher()
-        support_teacher.switch_to_support_teacher_window()
+        support_teacher.assert_switch_to_support_teacher_window()
 
     def test_get_started_footer(self, browser, open_teach_page):
         get_started_footer = TeachPage(browser)

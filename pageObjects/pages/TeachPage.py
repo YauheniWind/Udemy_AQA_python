@@ -53,7 +53,7 @@ class TeachPage(Helper):
     def click_support_teacher(self):
         self.click_button(self.elements.NEED_MORE_DETAILS_BUTTON)
 
-    def switch_to_support_teacher_window(self):
+    def assert_switch_to_support_teacher_window(self):
         self.switch_to_new_window()
         assert self.current_url() != 'https://www.udemy.com/teaching/?ref=teach_header'
 
