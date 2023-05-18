@@ -47,6 +47,7 @@ class TestTeachPage:
     def test_main_banner(self, browser, open_teach_page):
         banner_test = TeachPage(browser)
 
+        banner_test.none_element()
         banner_test.assert_find_main_banner()
         banner_test.click_get_started()
         banner_test.assert_modal_window_is_displayed()
@@ -54,6 +55,7 @@ class TestTeachPage:
     def test_how_to_begin(self, browser, open_teach_page):
         banner_test = TeachPage(browser)
 
+        banner_test.none_element()
         banner_test.scroll_to_banner_begin()
         banner_test.click_on_video()
         banner_test.assert_banner_is_change_on_video()
@@ -63,6 +65,7 @@ class TestTeachPage:
     def test_teachers_comments(self, browser, open_teach_page):
         teachers_comments = TeachPage(browser)
 
+        teachers_comments.none_element()
         teachers_comments.scroll_to_comments_from_teacher()
         teachers_comments.click_next_comment()
         teachers_comments.assert_name_of_teachers()
@@ -74,6 +77,14 @@ class TestTeachPage:
         support_teacher.scroll_to_support_teacher()
         support_teacher.click_support_teacher()
         support_teacher.switch_to_support_teacher_window()
+
+    def test_get_started_footer(self, browser, open_teach_page):
+        get_started_footer = TeachPage(browser)
+
+        get_started_footer.none_element()
+        get_started_footer.scroll_to_get_started_footer()
+        get_started_footer.click_get_started_footer()
+        get_started_footer.assert_modal_window_is_displayed()
 
 
 class TestLogIn:

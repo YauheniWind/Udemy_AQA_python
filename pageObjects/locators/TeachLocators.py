@@ -16,3 +16,6 @@ class TeachLocators:
 
     HELP_FOR_TEACHER = '//*[@class="teach-page__pale-container"]'
     NEED_MORE_DETAILS_BUTTON = '//*[@class="ud-btn ud-btn-large ud-btn-ghost ud-heading-md ud-link-underline here-to-help--cta--1DDFs"]'
+
+    GET_STARTED_BUTTON_FOOTER = '//*[@data-purpose="bai-cta-footer"]'
+    FOOTER = '//*[@data-purpose="footer"]'

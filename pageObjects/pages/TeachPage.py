@@ -56,3 +56,9 @@ class TeachPage(Helper):
     def switch_to_support_teacher_window(self):
         self.switch_to_new_window()
         assert self.current_url() != 'https://www.udemy.com/teaching/?ref=teach_header'
+
+    def scroll_to_get_started_footer(self):
+        self.scroll_to_element(self.elements.FOOTER)
+
+    def click_get_started_footer(self):
+        self.click_button(self.elements.GET_STARTED_BUTTON_FOOTER)
