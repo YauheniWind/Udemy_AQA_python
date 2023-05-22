@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
-
+from selenium.webdriver.support.select import Select
 
 class Helper:
     def __init__(self, driver):
@@ -149,3 +149,8 @@ class Helper:
     def display_none(self, locator):
         element = self.get_locator_by_xpath(locator)
         return self.driver.execute_script("arguments[0].style.display = 'none';", element)
+
+    def select_option(self, locator, text):
+        drop = self.get_locator_by_xpath(locator)
+        select = Select(drop)
+        select.select_by_visible_text(text)

@@ -42,6 +42,15 @@ class TestBusinessPage:
         logo_test.assert_logo_is_displayed()
         logo_test.click_on_logo()
 
+    def test_send_form(self, browser, open_business_page):
+        send_form = BusinessPage(browser)
+
+        send_form.none_element()
+        send_form.fill_form()
+        send_form.click_get_in_touch()
+        browser.refresh()
+        send_form.assert_page()
+
 
 class TestTeachPage:
     def test_main_banner(self, browser, open_teach_page):
