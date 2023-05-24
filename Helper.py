@@ -154,3 +154,8 @@ class Helper:
         drop = self.get_locator_by_xpath(locator)
         select = Select(drop)
         select.select_by_visible_text(text)
+
+    def mouse_click(self, locator, index=0):
+        element = self.get_locator_by_xpath(locator, index)
+        action_chains = ActionChains(self.driver)
+        return action_chains.click(element).perform()
