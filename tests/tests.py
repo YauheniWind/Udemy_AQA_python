@@ -8,6 +8,7 @@ from pageObjects.pages.TeachPage import TeachPage
 
 
 class TestMainPage:
+    # ---------- HEADER -------------
     def test_logo(self, browser, open_main_page):
         logo_test = MainPage(browser)
 
@@ -22,6 +23,15 @@ class TestMainPage:
         categories_test.mouse_moving_to_categories()
         categories_test.find_element_sub_categories()
 
+    def test_choose_developer_from_categories(self, browser, open_main_page):
+        choose_developer = MainPage(browser)
+
+        choose_developer.find_categories()
+        choose_developer.mouse_moving_to_categories()
+        choose_developer.click_develop()
+        choose_developer.asser_change_main_page_url()
+
+    # ---------- BODY -------------
     def test_skill_hub(self, browser, open_main_page):
         skill_hub = MainPage(browser)
 

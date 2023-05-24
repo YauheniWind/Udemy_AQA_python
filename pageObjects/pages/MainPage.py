@@ -27,6 +27,12 @@ class MainPage(Helper):
     def find_element_sub_categories(self):
         assert self.get_locator_by_xpath(self.elements.SUB_CATEGORIES)
 
+    def click_develop(self):
+        self.mouse_click(self.elements.DEVELOPER_BUTTON, 0)
+
+    def asser_change_main_page_url(self):
+        assert self.current_url() != "https://www.udemy.com/"
+
     # Body
 
     def click_yes(self):

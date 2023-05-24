@@ -18,6 +18,8 @@ class MainLocators:
 
     CHOOSE_A_LANGUAGE = '//*[@id="udemy"]//div[8]/button'
 
+    DEVELOPER_BUTTON = '//*[@data-id="288"]'
+
     PRIVACY = '//*[@id="onetrust-banner-sdk"]'
     ACCEPT_PRIVACY = '//*[@id="accept-recommended-btn-handler"]'
     MAIN_BANNER = '//*[@class="billboard-banner--image-container--3lMr5"]'
