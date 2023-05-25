@@ -1,3 +1,4 @@
+from selenium.webdriver import Keys
 from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -159,3 +160,12 @@ class Helper:
         element = self.get_locator_by_xpath(locator, index)
         action_chains = ActionChains(self.driver)
         return action_chains.click(element).perform()
+
+    def keyboard_click(self, locator):
+        element = self.get_locator_by_xpath(locator)
+        return element.send_keys(Keys.RETURN)
+
+    def mouse_moving_with_index(self, locator, index=0):
+        element = self.get_locator_by_xpath(locator, index)
+        action = ActionChains(self.driver)
+        return action.move_to_element(element).perform()
