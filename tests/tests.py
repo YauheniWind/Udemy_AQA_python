@@ -31,6 +31,27 @@ class TestMainPage:
         choose_developer.click_develop()
         choose_developer.asser_change_main_page_url()
 
+    def test_search(self, browser, open_main_page):
+        search = MainPage(browser)
+
+        search.enter_text_in_search()
+        search.click_enter()
+        search.assert_find_python_courses()
+        time.sleep(5)
+
+    def test_business_modal_window(self, browser, open_main_page):
+        business_modal_window = MainPage(browser)
+
+        business_modal_window.select_business()
+        business_modal_window.assert_business_modal_window()
+
+    def test_click_try_udemy_business(self, browser, open_main_page):
+        try_udemy_business = MainPage(browser)
+
+        try_udemy_business.select_business()
+        try_udemy_business.click_try_business()
+        try_udemy_business.asser_change_main_page_url()
+
     # ---------- BODY -------------
     def test_skill_hub(self, browser, open_main_page):
         skill_hub = MainPage(browser)

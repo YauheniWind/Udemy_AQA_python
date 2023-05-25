@@ -33,6 +33,24 @@ class MainPage(Helper):
     def asser_change_main_page_url(self):
         assert self.current_url() != "https://www.udemy.com/"
 
+    def enter_text_in_search(self):
+        self.send_keys(self.elements.SEARCH_INPUT, "Python")
+
+    def click_enter(self):
+        self.keyboard_click(self.elements.SEARCH_INPUT)
+
+    def assert_find_python_courses(self):
+        assert self.current_url() == 'https://www.udemy.com/courses/search/?src=ukw&q=Python'
+
+    def select_business(self):
+        self.mouse_moving(self.elements.UDEMY_BUSINESS)
+
+    def assert_business_modal_window(self):
+        assert self.get_element_by_xpath(self.elements.BUSINESS_MODAL_WINDOW).is_displayed()
+
+    def click_try_business(self):
+        self.mouse_click(self.elements.TRY_UDEMY_BUSINESS)
+
     # Body
 
     def click_yes(self):

@@ -9,7 +9,10 @@ class MainLocators:
 
     SEARCH_INPUT = '//*[@data-testid="search-input"]'
 
-    UDEMY_BUSINESS = '//*[@id="u78-popper-trigger--8"]'
+    UDEMY_BUSINESS = '//*[@class="popper-module--popper--2BpLn header--gap-button--1p5bX header--group-a--3BELn"]'
+    BUSINESS_MODAL_WINDOW = '//*[@data-purpose="hook-text"]'
+    TRY_UDEMY_BUSINESS = '//*[@data-purpose="try-ufb-button"]'
+
     TEACH_ON_UDEMY = '//*[@id="u78-popper-trigger--10"]'
 
     BASKET = '//*[@id="udemy"]//div[4]/div[5]'
