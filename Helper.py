@@ -151,6 +151,10 @@ class Helper:
         element = self.get_locator_by_xpath(locator)
         return self.driver.execute_script("arguments[0].style.display = 'none';", element)
 
+    def display_block(self, locator):
+        element = self.get_locator_by_xpath(locator)
+        return self.driver.execute_script("arguments[0].style.display = 'block';", element)
+
     def select_option(self, locator, text):
         drop = self.get_locator_by_xpath(locator)
         select = Select(drop)
