@@ -51,6 +51,20 @@ class MainPage(Helper):
     def click_try_business(self):
         self.mouse_click(self.elements.TRY_UDEMY_BUSINESS)
 
+    def select_teach(self):
+        self.mouse_moving(self.elements.TEACH_ON_UDEMY)
+
+    def assert_teach_modal_window(self):
+        element = self.get_locator_by_xpath(self.elements.TEACH_MODAL_WINDOW, 1)
+        if element:
+            assert True
+
+    def click_learn_more(self):
+        self.click_button(self.elements.LEARN_MORE)
+
+    def display_teach(self):
+        self.display_block(self.elements.BLOCK_TEACH)
+
     # Body
 
     def click_yes(self):

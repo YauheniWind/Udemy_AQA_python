@@ -13,7 +13,10 @@ class MainLocators:
     BUSINESS_MODAL_WINDOW = '//*[@data-purpose="hook-text"]'
     TRY_UDEMY_BUSINESS = '//*[@data-purpose="try-ufb-button"]'
 
-    TEACH_ON_UDEMY = '//*[@id="u78-popper-trigger--10"]'
+    TEACH_ON_UDEMY = '//*[@data-purpose="instructor-dropdown"]'
+    TEACH_MODAL_WINDOW = '//*[@class="ud-heading-lg panel-menu--gap-bottom--iiRgE"]'
+    LEARN_MORE = '//*[@href="/teaching/?ref=teach_header"]'
+    BLOCK_TEACH = '//*[@class="popper-module--popper-content--3cLBV header--dropdown--2qg7Q"]'
 
     BASKET = '//*[@id="udemy"]//div[4]/div[5]'
     LOG_IN = '//*[@data-purpose="header-login"]'

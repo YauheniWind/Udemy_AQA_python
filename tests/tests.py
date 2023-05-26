@@ -52,6 +52,19 @@ class TestMainPage:
         try_udemy_business.click_try_business()
         try_udemy_business.asser_change_main_page_url()
 
+    def test_tech_modal_window(self, browser, open_main_page):
+        teach_modal_window = MainPage(browser)
+
+        teach_modal_window.select_teach()
+        teach_modal_window.assert_teach_modal_window()
+
+    def test_click_learn_more(self, browser, open_main_page):
+        learn_more = MainPage(browser)
+
+        learn_more.select_teach()
+        learn_more.click_learn_more()
+        learn_more.asser_change_main_page_url()
+
     # ---------- BODY -------------
     def test_skill_hub(self, browser, open_main_page):
         skill_hub = MainPage(browser)
