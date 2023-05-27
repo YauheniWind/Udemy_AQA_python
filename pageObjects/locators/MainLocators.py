@@ -18,7 +18,10 @@ class MainLocators:
     LEARN_MORE = '//*[@href="/teaching/?ref=teach_header"]'
     BLOCK_TEACH = '//*[@class="popper-module--popper-content--3cLBV header--dropdown--2qg7Q"]'
 
-    BASKET = '//*[@id="udemy"]//div[4]/div[5]'
+    BASKET_CART = '//*[@data-purpose="cart-icon"]'
+    BASKET_MODAL_WINDOW = '//*[@class="ud-text-md panel-menu--gap-bottom--iiRgE panel-menu--no-items--2oxzC"]'
+    BASKET_EMPTY_TITLE = 'Your cart is empty.'
+
     LOG_IN = '//*[@data-purpose="header-login"]'
     SIGN_UP = '//*[@data-purpose="header-signup"]'
 

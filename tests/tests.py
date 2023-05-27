@@ -72,6 +72,12 @@ class TestMainPage:
         change_language.choose_language_russian()
         change_language.assert_title_change_language()
 
+    def test_basket_modal_window(self, browser, open_main_page):
+        basket_modal_window = MainPage(browser)
+
+        basket_modal_window.select_basket()
+        basket_modal_window.assert_title_in_basket()
+
     # ---------- BODY -------------
     def test_skill_hub(self, browser, open_main_page):
         skill_hub = MainPage(browser)

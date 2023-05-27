@@ -74,6 +74,11 @@ class MainPage(Helper):
     def assert_title_change_language(self):
         assert self.get_locator_by_xpath(self.elements.CHANGED_LANGUAGE_BANNER).text == self.elements.TITLE_IN_RUSSIAN
 
+    def select_basket(self):
+        self.mouse_moving(self.elements.BASKET_CART)
+
+    def assert_title_in_basket(self):
+        assert self.get_inner_text(self.elements.BASKET_MODAL_WINDOW) == self.elements.BASKET_EMPTY_TITLE
     # Body
 
     def click_yes(self):
