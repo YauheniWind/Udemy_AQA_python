@@ -173,3 +173,7 @@ class Helper:
         element = self.get_locator_by_xpath(locator, index)
         action = ActionChains(self.driver)
         return action.move_to_element(element).perform()
+
+    def get_inner_text(self, locator, index=0):
+        element = self.get_locator_by_xpath(locator, index)
+        return element.get_attribute('innerText')
