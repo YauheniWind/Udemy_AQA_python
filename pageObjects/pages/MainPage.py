@@ -65,6 +65,15 @@ class MainPage(Helper):
     def display_teach(self):
         self.display_block(self.elements.BLOCK_TEACH)
 
+    def choose_language_button(self):
+        self.click_button(self.elements.CHOOSE_A_LANGUAGE)
+
+    def choose_language_russian(self):
+        self.click_button(self.elements.RUSSIAN_LANGUAGE)
+
+    def assert_title_change_language(self):
+        assert self.get_locator_by_xpath(self.elements.CHANGED_LANGUAGE_BANNER).text == self.elements.TITLE_IN_RUSSIAN
+
     # Body
 
     def click_yes(self):

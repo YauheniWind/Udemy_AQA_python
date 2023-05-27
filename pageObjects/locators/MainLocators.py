@@ -23,6 +23,9 @@ class MainLocators:
     SIGN_UP = '//*[@data-purpose="header-signup"]'
 
     CHOOSE_A_LANGUAGE = '//*[@id="udemy"]//div[8]/button'
+    RUSSIAN_LANGUAGE = '//*[@lang="ru"]'
+    CHANGED_LANGUAGE_BANNER = '//*[@id="Большой выбор курсов"]'
+    TITLE_IN_RUSSIAN = "Большой выбор курсов"
 
     DEVELOPER_BUTTON = '//*[@data-id="288"]'
 

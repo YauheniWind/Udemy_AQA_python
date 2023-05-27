@@ -65,6 +65,13 @@ class TestMainPage:
         learn_more.click_learn_more()
         learn_more.asser_change_main_page_url()
 
+    def test_change_language(self, browser, open_main_page):
+        change_language = MainPage(browser)
+
+        change_language.choose_language_button()
+        change_language.choose_language_russian()
+        change_language.assert_title_change_language()
+
     # ---------- BODY -------------
     def test_skill_hub(self, browser, open_main_page):
         skill_hub = MainPage(browser)
