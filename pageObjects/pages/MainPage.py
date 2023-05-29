@@ -79,6 +79,31 @@ class MainPage(Helper):
 
     def assert_title_in_basket(self):
         assert self.get_inner_text(self.elements.BASKET_MODAL_WINDOW) == self.elements.BASKET_EMPTY_TITLE
+
+    def add_product_in_basket(self):
+        self.click_button(self.elements.ADD_TO_BASKET)
+
+    def click_close_pop_up(self):
+        self.click_button(self.elements.CLOSE_POP_UP)
+
+    def assert_product_in_basket(self):
+        assert self.get_inner_text(self.elements.PRODUCT_INFO_IN_BASKET) == self.elements.NAME_OF_PRODUCT
+
+    def assert_banner_above_header(self):
+        assert self.get_locator_by_xpath(self.elements.BANNER_ABOVE_HEADER)
+
+    def close_banner_above_header(self):
+        self.click_button(self.elements.CLOSE_BANNER_ABOVE_HEADER)
+
+    def assert_not_banner_above_header(self):
+        assert self.waiting_disappearance_element(self.elements.BANNER_ABOVE_HEADER)
+
+    def click_log_in(self):
+        self.click_button(self.elements.LOG_IN)
+
+    def click_sing_up(self):
+        self.click_button(self.elements.SIGN_UP)
+
     # Body
 
     def click_yes(self):

@@ -75,7 +75,8 @@ def pytest_addoption(parser):
 
 @pytest.fixture
 def open_page(browser):
-    browser.get("http://the-internet.herokuapp.com/dynamic_controls")
+    browser.get("https://www.udemy.com/course/complete-python-bootcamp/?persist_locale=&locale=en_US")
+    browser.fullscreen_window()
 
 
 @pytest.fixture

@@ -78,6 +78,33 @@ class TestMainPage:
         basket_modal_window.select_basket()
         basket_modal_window.assert_title_in_basket()
 
+    def test_add_to_basket(self, browser, open_page):
+        add_to_basket = MainPage(browser)
+
+        add_to_basket.add_product_in_basket()
+        add_to_basket.select_basket()
+        add_to_basket.click_close_pop_up()
+        add_to_basket.assert_product_in_basket()
+
+    def test_banner_above_header(self, browser, open_main_page):
+        banner_above_header = MainPage(browser)
+
+        banner_above_header.assert_banner_above_header()
+        banner_above_header.close_banner_above_header()
+        banner_above_header.assert_not_banner_above_header()
+
+    def test_click_log_in(self, browser, open_main_page):
+        click_log_in = MainPage(browser)
+
+        click_log_in.click_log_in()
+        click_log_in.asser_change_main_page_url()
+
+    def test_click_sing_up(self, browser, open_main_page):
+        click_sing_up = MainPage(browser)
+
+        click_sing_up.click_sing_up()
+        click_sing_up.asser_change_main_page_url()
+
     # ---------- BODY -------------
     def test_skill_hub(self, browser, open_main_page):
         skill_hub = MainPage(browser)

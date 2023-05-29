@@ -22,6 +22,14 @@ class MainLocators:
     BASKET_MODAL_WINDOW = '//*[@class="ud-text-md panel-menu--gap-bottom--iiRgE panel-menu--no-items--2oxzC"]'
     BASKET_EMPTY_TITLE = 'Your cart is empty.'
 
+    ADD_TO_BASKET = '//*[@data-testid="add-to-cart-button"]'
+    CLOSE_POP_UP = '//*[@data-purpose="close-popup"]'
+    PRODUCT_INFO_IN_BASKET = '//*[@class="ud-heading-sm shopping-item--buyable-title--1akia ud-focus-visible-target item-card-module--item-card-title--S729p"]'
+    NAME_OF_PRODUCT = 'The Complete Python Bootcamp From Zero to Hero in Python'
+
+    BANNER_ABOVE_HEADER = '//*[@data-purpose="smart-bar-container"]'
+    CLOSE_BANNER_ABOVE_HEADER = '//*[@data-purpose="smart-bar-hide"]'
+
     LOG_IN = '//*[@data-purpose="header-login"]'
     SIGN_UP = '//*[@data-purpose="header-signup"]'
 
