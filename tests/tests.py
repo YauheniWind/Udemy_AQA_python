@@ -106,6 +106,12 @@ class TestMainPage:
         click_sing_up.asser_change_main_page_url()
 
     # ---------- BODY -------------
+
+    def test_main_banner(self, browser, open_main_page):
+        main_banner = MainPage(open_main_page)
+
+        main_banner.assert_main_banner()
+
     def test_skill_hub(self, browser, open_main_page):
         skill_hub = MainPage(browser)
 
@@ -117,6 +123,24 @@ class TestMainPage:
         skill_hub.click_on_second_button()
 
         skill_hub.assert_text_from_skill_hub()
+
+    def test_explore_python(self, browser, open_main_page):
+        explore_python = MainPage(browser)
+
+        explore_python.click_yes()
+        explore_python.click_accept()
+        explore_python.scroll_to_explore()
+        explore_python.click_explore_python()
+        explore_python.asser_change_main_page_url()
+
+    def test_scroll_courses(self, browser, open_main_page):
+        scroll_courses = MainPage(browser)
+
+        scroll_courses.click_yes()
+        scroll_courses.click_accept()
+        scroll_courses.scroll_to_explore()
+        scroll_courses.next_banner()
+        scroll_courses.assert_cart_of_product()
 
 
 class TestBusinessPage:

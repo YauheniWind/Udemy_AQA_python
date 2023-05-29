@@ -106,6 +106,9 @@ class MainPage(Helper):
 
     # Body
 
+    def assert_main_banner(self):
+        self.get_element_by_xpath(self.elements.MAIN_BANNER)
+
     def click_yes(self):
         self.click_button(self.elements.PRIVACY)
 
@@ -125,3 +128,15 @@ class MainPage(Helper):
         assert self.get_locator_by_contains_text(
             self.elements.TITLE_EXCEL
         ).is_displayed()
+
+    def click_explore_python(self):
+        self.get_locator_by_contains_text('Explore Python')
+
+    def scroll_to_explore(self):
+        self.scroll_to_element(self.elements.HOW_LEARN)
+
+    def next_banner(self):
+        self.click_button(self.elements.ARROW_NEXT)
+
+    def assert_cart_of_product(self):
+        assert self.get_element_by_xpath(self.elements.CART)

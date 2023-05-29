@@ -42,8 +42,7 @@ class MainLocators:
 
     PRIVACY = '//*[@id="onetrust-banner-sdk"]'
     ACCEPT_PRIVACY = '//*[@id="accept-recommended-btn-handler"]'
-    MAIN_BANNER = '//*[@class="billboard-banner--image-container--3lMr5"]'
-
+    MAIN_BANNER = '//*[@id="u159-scroll-port--1"]'
     SKILLS_HUB = '//*[@data-purpose="skills-hub-unit"]'
     FIRST_BUTTON_IN_SKILLS_HUB = '//*[@id="u47-tabs--2-tab-0"]'
     SECOND_BUTTON_IN_SKILLS_HUB = (
@@ -59,3 +58,9 @@ class MainLocators:
 
     TITLE_PYTHON = "Expand your career opportunities with Python"
     TITLE_EXCEL = "Analyze and visualize data with Excel"
+
+    EXPLORE_PYTHON = '//*[@id="u33-tabs--2-content-0"]/div/div[1]/a/span'
+    HOW_LEARN = '//*[@class="ud-heading-xl"]'
+
+    ARROW_NEXT = '//*[@data-pager-type="next"]'
+    CART = '//*[@href="/course/complete-python-bootcamp/"]'

@@ -6,6 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.select import Select
 
+
 class Helper:
     def __init__(self, driver):
         self.driver = driver
@@ -17,7 +18,8 @@ class Helper:
         return elements[index]
 
     def get_element_by_xpath(self, selector):
-        return self.driver.find_element(By.XPATH, selector)
+        xpath = (By.XPATH, selector)
+        return self.driver.find_element(*xpath)
 
     def get_locator_by_css(self, selector):
         # .class_name
