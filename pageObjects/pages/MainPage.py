@@ -140,3 +140,13 @@ class MainPage(Helper):
 
     def assert_cart_of_product(self):
         assert self.get_element_by_xpath(self.elements.CART)
+
+    def select_product(self):
+        self.mouse_moving(self.elements.CART_ON_MAIN_PAGE)
+
+    def assert_info_cart(self):
+        assert self.get_locator_by_xpath(self.elements.TITLE_MODAL_WINDOW_CART)
+
+    def click_add_to_cart(self):
+        self.mouse_moving(self.elements.CART_ON_MAIN_PAGE)
+        self.click_button(self.elements.ADD_TO_CART_BUTTON)

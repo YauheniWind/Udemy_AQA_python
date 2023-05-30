@@ -64,3 +64,8 @@ class MainLocators:
 
     ARROW_NEXT = '//*[@data-pager-type="next"]'
     CART = '//*[@href="/course/complete-python-bootcamp/"]'
+
+    CART_ON_MAIN_PAGE = '//*[@data-purpose="course-details-popover-trigger"]'
+    TITLE_MODAL_WINDOW_CART = '//*[@data-purpose="quick-view-box-title"]'
+    ADD_TO_CART_BUTTON = '//*[@data-testid="add-to-cart-button"]'
+    ADD_TO_WISH_LIST_BUTTON = '//*[@class="course-details-quick-view-box--wishlist--1DehW"]'

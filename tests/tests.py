@@ -142,6 +142,22 @@ class TestMainPage:
         scroll_courses.next_banner()
         scroll_courses.assert_cart_of_product()
 
+    def test_cart_modal_window(self, browser, open_main_page):
+        cart_modal_window = MainPage(browser)
+
+        cart_modal_window.scroll_to_explore()
+        cart_modal_window.select_product()
+        cart_modal_window.assert_info_cart()
+
+    def test_add_product_to_basket(self, browser, open_main_page):
+        add_product_to_basket = MainPage(browser)
+
+        add_product_to_basket.scroll_to_explore()
+        add_product_to_basket.click_add_to_cart()
+        add_product_to_basket.select_basket()
+        add_product_to_basket.assert_title_in_basket()
+
+
 
 class TestBusinessPage:
     def test_logo(self, browser, open_business_page):
