@@ -133,7 +133,7 @@ class MainPage(Helper):
         self.get_locator_by_contains_text('Explore Python')
 
     def scroll_to_explore(self):
-        self.scroll_to_element(self.elements.HOW_LEARN)
+        self.scroll_to_element(self.elements.HOW_LEARN_TITLE)
 
     def next_banner(self):
         self.click_button(self.elements.ARROW_NEXT)
@@ -150,3 +150,13 @@ class MainPage(Helper):
     def click_add_to_cart(self):
         self.mouse_moving(self.elements.CART_ON_MAIN_PAGE)
         self.click_button(self.elements.ADD_TO_CART_BUTTON)
+
+    def click_add_to_wish_list(self):
+        self.mouse_moving(self.elements.CART_ON_MAIN_PAGE)
+        self.click_button(self.elements.ADD_TO_WISH_LIST_BUTTON)
+
+    def assert_how_to_learn_section(self):
+        assert self.get_locator_by_xpath(self.elements.HOW_LEARN_SECTION)
+
+    def scroll_to_students(self):
+        self.scroll_to_element(self.elements.STUDENTS)

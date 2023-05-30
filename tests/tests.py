@@ -157,6 +157,18 @@ class TestMainPage:
         add_product_to_basket.select_basket()
         add_product_to_basket.assert_title_in_basket()
 
+    def test_add_to_wish_list(self, browser, open_main_page):
+        add_to_wish_list = MainPage(browser)
+
+        add_to_wish_list.scroll_to_explore()
+        add_to_wish_list.click_add_to_wish_list()
+        add_to_wish_list.asser_change_main_page_url()
+
+    def test_how_to_learn_section(self, browser, open_main_page):
+        how_to_learn_section = MainPage(browser)
+
+        how_to_learn_section.scroll_to_students()
+        how_to_learn_section.assert_how_to_learn_section()
 
 
 class TestBusinessPage:

@@ -60,7 +60,7 @@ class MainLocators:
     TITLE_EXCEL = "Analyze and visualize data with Excel"
 
     EXPLORE_PYTHON = '//*[@id="u33-tabs--2-content-0"]/div/div[1]/a/span'
-    HOW_LEARN = '//*[@class="ud-heading-xl"]'
+    HOW_LEARN_TITLE = '//*[@class="ud-heading-xl"]'
 
     ARROW_NEXT = '//*[@data-pager-type="next"]'
     CART = '//*[@href="/course/complete-python-bootcamp/"]'
@@ -69,3 +69,6 @@ class MainLocators:
     TITLE_MODAL_WINDOW_CART = '//*[@data-purpose="quick-view-box-title"]'
     ADD_TO_CART_BUTTON = '//*[@data-testid="add-to-cart-button"]'
     ADD_TO_WISH_LIST_BUTTON = '//*[@class="course-details-quick-view-box--wishlist--1DehW"]'
+
+    HOW_LEARN_SECTION = '//*[@class="ud-container discovery-units--testimonials--1ErIi"]'
+    STUDENTS = '//*[@data-purpose="discovery-unit-1152523765"]'
