@@ -170,6 +170,13 @@ class TestMainPage:
         how_to_learn_section.scroll_to_students()
         how_to_learn_section.assert_how_to_learn_section()
 
+    def test_scroll_to_learn_section(self, browser, open_main_page):
+        how_to_learn_section = MainPage(browser)
+
+        how_to_learn_section.scroll_to_students()
+        how_to_learn_section.click_next_button_section_how_learn()
+        how_to_learn_section.assert_student_name_is_change()
+
 
 class TestBusinessPage:
     def test_logo(self, browser, open_business_page):

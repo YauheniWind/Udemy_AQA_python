@@ -72,3 +72,5 @@ class MainLocators:
 
     HOW_LEARN_SECTION = '//*[@class="ud-container discovery-units--testimonials--1ErIi"]'
     STUDENTS = '//*[@data-purpose="discovery-unit-1152523765"]'
+    NEXT_BUTTON_HOW_LEARN = '//*[@id="udemy"]//section/div[2]/button[2]'
+    STUDENTS_NAME = '//*[@data-purpose="user-name"]'

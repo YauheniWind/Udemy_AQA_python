@@ -160,3 +160,9 @@ class MainPage(Helper):
 
     def scroll_to_students(self):
         self.scroll_to_element(self.elements.STUDENTS)
+
+    def click_next_button_section_how_learn(self):
+        self.click_button(self.elements.NEXT_BUTTON_HOW_LEARN)
+
+    def assert_student_name_is_change(self):
+        assert self.get_inner_text(self.elements.STUDENTS_NAME, 3) == 'Surya M'
