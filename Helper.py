@@ -179,3 +179,7 @@ class Helper:
     def get_inner_text(self, locator, index=0):
         element = self.get_locator_by_xpath(locator, index)
         return element.get_attribute('innerText')
+
+    def js_click(self, locator, index=0):
+        element = self.get_locator_by_xpath(locator, index)
+        return element.execute_script("arguments[0].click();", element)
