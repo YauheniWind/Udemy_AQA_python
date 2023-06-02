@@ -42,7 +42,9 @@ class MainLocators:
 
     PRIVACY = '//*[@id="onetrust-banner-sdk"]'
     ACCEPT_PRIVACY = '//*[@id="accept-recommended-btn-handler"]'
-    MAIN_BANNER = '//*[@id="u159-scroll-port--1"]'
+
+    MAIN_BANNER = '//*[@class="carousel-billboard--carousel-billboard-container--5hTpo"]'
+
     SKILLS_HUB = '//*[@data-purpose="skills-hub-unit"]'
     FIRST_BUTTON_IN_SKILLS_HUB = '//*[@id="u47-tabs--2-tab-0"]'
     SECOND_BUTTON_IN_SKILLS_HUB = (
@@ -74,3 +76,7 @@ class MainLocators:
     STUDENTS = '//*[@data-purpose="discovery-unit-1152523765"]'
     NEXT_BUTTON_HOW_LEARN = '//*[@id="udemy"]//section/div[2]/button[2]'
     STUDENTS_NAME = '//*[@data-purpose="user-name"]'
+
+    COMMENT_IN_HOW_LEARN = '//*[@class="testimonial-card--testimonial--1vJ4Y"]'
+    NAME_OF_COURSE_IN_HOW_LEARN = '//*[@class="ud-btn ud-btn-large ud-btn-link ud-heading-md"]'
+

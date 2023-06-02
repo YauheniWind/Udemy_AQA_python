@@ -27,7 +27,6 @@ class TestMainPage:
         choose_developer = MainPage(browser)
 
         choose_developer.find_categories()
-        choose_developer.mouse_moving_to_categories()
         choose_developer.click_develop()
         choose_developer.asser_change_main_page_url()
 
@@ -110,7 +109,7 @@ class TestMainPage:
     def test_main_banner(self, browser, open_main_page):
         main_banner = MainPage(open_main_page)
 
-        main_banner.assert_main_banner()
+        main_banner.assert_general_banner_main_page()
 
     def test_skill_hub(self, browser, open_main_page):
         skill_hub = MainPage(browser)
@@ -176,6 +175,19 @@ class TestMainPage:
         how_to_learn_section.scroll_to_students()
         how_to_learn_section.click_next_button_section_how_learn()
         how_to_learn_section.assert_student_name_is_change()
+
+    def test_info_how_learn(self, browser, open_main_page):
+        info_how_learn = MainPage(browser)
+
+        info_how_learn.scroll_to_students()
+        info_how_learn.assert_info_in_cart_of_comment()
+
+    def test_select_course(self, browser, open_main_page):
+        select_course = MainPage(browser)
+
+        select_course.scroll_to_students()
+        select_course.click_course()
+        select_course.asser_change_main_page_url()
 
 
 class TestBusinessPage:

@@ -28,6 +28,7 @@ class MainPage(Helper):
         assert self.get_locator_by_xpath(self.elements.SUB_CATEGORIES)
 
     def click_develop(self):
+        self.mouse_moving(self.elements.CATEGORIES)
         self.mouse_click(self.elements.DEVELOPER_BUTTON, 0)
 
     def asser_change_main_page_url(self):
@@ -106,8 +107,8 @@ class MainPage(Helper):
 
     # Body
 
-    def assert_main_banner(self):
-        self.get_element_by_xpath(self.elements.MAIN_BANNER)
+    def assert_general_banner_main_page(self):
+        assert self.get_locator_by_xpath(self.elements.MAIN_BANNER)
 
     def click_yes(self):
         self.click_button(self.elements.PRIVACY)
@@ -166,3 +167,11 @@ class MainPage(Helper):
 
     def assert_student_name_is_change(self):
         assert self.get_inner_text(self.elements.STUDENTS_NAME, 3) == 'Surya M'
+
+    def assert_info_in_cart_of_comment(self):
+        assert self.get_locator_by_xpath(self.elements.COMMENT_IN_HOW_LEARN).is_displayed()
+        assert self.get_locator_by_xpath(self.elements.NAME_OF_COURSE_IN_HOW_LEARN).is_displayed()
+        assert self.get_locator_by_xpath(self.elements.STUDENTS_NAME).is_displayed()
+
+    def click_course(self):
+        self.click_button(self.elements.NAME_OF_COURSE_IN_HOW_LEARN)
