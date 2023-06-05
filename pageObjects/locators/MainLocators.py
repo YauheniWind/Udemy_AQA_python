@@ -43,7 +43,7 @@ class MainLocators:
     PRIVACY = '//*[@id="onetrust-banner-sdk"]'
     ACCEPT_PRIVACY = '//*[@id="accept-recommended-btn-handler"]'
 
-    MAIN_BANNER = '//*[@class="carousel-billboard--carousel-billboard-container--5hTpo"]'
+    GENERAL_BANNER = '//*[@class="logged-out-home-page"]'
 
     SKILLS_HUB = '//*[@data-purpose="skills-hub-unit"]'
     FIRST_BUTTON_IN_SKILLS_HUB = '//*[@id="u47-tabs--2-tab-0"]'

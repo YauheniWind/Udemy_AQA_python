@@ -106,8 +106,8 @@ class TestMainPage:
 
     # ---------- BODY -------------
 
-    def test_main_banner(self, browser, open_main_page):
-        main_banner = MainPage(open_main_page)
+    def test_general_banner(self, browser, open_main_page):
+        main_banner = MainPage(browser)
 
         main_banner.assert_general_banner_main_page()
 

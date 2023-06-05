@@ -108,7 +108,7 @@ class MainPage(Helper):
     # Body
 
     def assert_general_banner_main_page(self):
-        assert self.get_locator_by_xpath(self.elements.MAIN_BANNER)
+        assert self.get_locator_by_xpath(self.elements.GENERAL_BANNER)
 
     def click_yes(self):
         self.click_button(self.elements.PRIVACY)
