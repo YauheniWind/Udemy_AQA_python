@@ -1,6 +1,8 @@
 import pytest
 import time
 import os
+from pathlib import Path
+from slugify import slugify
 
 from allure_commons import fixture
 from selenium import webdriver
@@ -115,51 +117,23 @@ def open_sing_up_page(browser):
     browser.maximize_window()
 
 
-# set up a hook to be able to check if a test has failed
-# @pytest.hookimpl(tryfirst=True, hookwrapper=True)
+
+# @pytest.hookimpl(hookwrapper=True)
 # def pytest_runtest_makereport(item, call):
-#     # execute all other hooks to obtain the report object
+#     pytest_html = item.config.pluginmanager.getplugin("html")
 #     outcome = yield
-#     rep = outcome.get_result()
-#
-#     # set a report attribute for each phase of a call, which can
-#     # be "setup", "call", "teardown"
-#
-#     setattr(item, "rep_" + rep.when, rep)
-#
-# @pytest.hookimpl(tryfirst=True, hookwrapper=True)
-# def pytest_runtest_makereport(item, call):
-#     report = (yield).get_result()
+#     screen_file = ''
+#     report = outcome.get_result()
+#     extra = getattr(report, "extra", [])
 #     if report.when == "call":
-#         setattr(item, "report", report)
-#
-# # check if a test has failed
-# @pytest.fixture(scope='function', autouse=True)
-# def make_failed_screenshot(request):
-#     yield
-#     if request.node.report:  # See pytest_runtest_makereport() in conftest.py
-#         if request.node.report.failed:
-#             # TODO: refactor the next string to use path from the config: request.config.conf.pytest.screenshots
-#             browser = webdriver.Chrome
-#             path = 'p3_failed_tests_data/'
-#             make_dir(path)
-#             file_path = 'p3_failed_tests_data/' + f'{request.node.name}.png'
-#             file_name = path + f'{request.node.name}.png'
-#             browser.save_screenshot("/tests")
-#             print('\nError path ', browser.current_url)
-#             print('\nScreenshot ', file_path)
-#
-#
-# # make a screenshot with a name of the test, date and time
-# def take_screenshot(driver, nodeid):
-#     time.sleep(1)
-#     file_name = f'MY_{datetime.today().strftime("%Y-%m-%d_%H:%M")}.png'.replace(
-#         "/", "_"
-#     ).replace("::", "__")
-#     print(file_name)
-#     driver.save_screenshot(file_name)
-#
-#
-# def make_dir(directory_name):
-#     if not os.path.exists(directory_name):
-#         os.makedirs(directory_name)
+#         if report.failed and "page" in item.funcargs:
+#             page = item.funcargs["page"]
+#             screenshot_dir = Path("screenshots")
+#             screenshot_dir.mkdir(exist_ok=True)
+#             screen_file = str(screenshot_dir / f"{slugify(item.nodeid)}.png")
+#             page.screenshot(path=screen_file)
+#         xfail = hasattr(report, "wasxfail")
+#         if (report.skipped and xfail) or (report.failed and not xfail):
+#             # add the screenshots to the html report
+#             extra.append(pytest_html.extras.png(screen_file))
+#         report.extra = extra
