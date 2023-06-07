@@ -116,6 +116,11 @@ def open_sing_up_page(browser):
     )
     browser.maximize_window()
 
+@pytest.fixture
+def open_cart_page(browser):
+    browser.get("https://www.udemy.com/course/bestpython/")
+    browser.fullscreen_window()
+
 
 
 # @pytest.hookimpl(hookwrapper=True)
