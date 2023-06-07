@@ -9,3 +9,8 @@ class CartPage(Helper):
 
         self.elements = CartLocators()
 
+    def check_url(self):
+        assert self.current_url() != "https://www.udemy.com/course/bestpython/"
+
+    def click_buy_now(self):
+        self.click_button(self.elements.BUY_NOW_BUTTON)

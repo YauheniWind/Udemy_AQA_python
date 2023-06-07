@@ -5,6 +5,7 @@ from pageObjects.pages.MainPage import MainPage
 from pageObjects.pages.BusinessPage import BusinessPage
 from pageObjects.pages.SingUpPage import SingUpPage
 from pageObjects.pages.TeachPage import TeachPage
+from pageObjects.pages.CartPage import CartPage
 
 
 class TestMainPage:
@@ -291,3 +292,11 @@ class TestSingUp:
         sing_up.fill_registration_form()
         sing_up.click_sing_up()
         sing_up.assert_change_page()
+
+
+class TestCart:
+    def test_buy_now(self, browser, open_cart_page):
+        buy_now = CartPage(browser)
+
+        buy_now.click_buy_now()
+        buy_now.check_url()
