@@ -121,6 +121,10 @@ def open_cart_page(browser):
     browser.get("https://www.udemy.com/course/bestpython/")
     browser.fullscreen_window()
 
+@pytest.fixture
+def open_search_result(browser):
+    browser.get('https://www.udemy.com/courses/search/?q=Python&sort=relevance&src=ukw&persist_locale=&locale=en_US')
+    browser.fullscreen_window()
 
 
 # @pytest.hookimpl(hookwrapper=True)
