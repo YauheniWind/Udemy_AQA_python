@@ -175,3 +175,12 @@ class MainPage(Helper):
 
     def click_course(self):
         self.click_button(self.elements.NAME_OF_COURSE_IN_HOW_LEARN)
+
+    def click_show_more(self):
+        self.click_button(self.elements.SHOW_MORE_BUTTON, 0)
+
+    def click_russian(self):
+        self.click_button(self.elements.RUSSIAN_CHECK_BOX, 13)
+
+    def assert_label_result(self):
+        assert self.waiting_disappearance_element(self.elements.LABEL_RESULT)

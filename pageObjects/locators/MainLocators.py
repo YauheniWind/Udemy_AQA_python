@@ -80,3 +80,6 @@ class MainLocators:
     COMMENT_IN_HOW_LEARN = '//*[@class="testimonial-card--testimonial--1vJ4Y"]'
     NAME_OF_COURSE_IN_HOW_LEARN = '//*[@class="ud-btn ud-btn-large ud-btn-link ud-heading-md"]'
 
+    LABEL_RESULT = '//*[@data-purpose="safely-set-inner-html:search:query"]'
+    SHOW_MORE_BUTTON = '//*[@class="ud-btn ud-btn-medium ud-btn-ghost ud-heading-sm show-more-module--focusable-label--19jtd"]'
+    RUSSIAN_CHECK_BOX = '//*[@class="ud-toggle-input-container ud-text-sm"]'

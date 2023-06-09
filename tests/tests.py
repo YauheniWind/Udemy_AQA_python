@@ -37,7 +37,7 @@ class TestMainPage:
         search.enter_text_in_search()
         search.click_enter()
         search.assert_find_python_courses()
-        time.sleep(5)
+
 
     def test_business_modal_window(self, browser, open_main_page):
         business_modal_window = MainPage(browser)
@@ -189,6 +189,13 @@ class TestMainPage:
         select_course.scroll_to_students()
         select_course.click_course()
         select_course.asser_change_main_page_url()
+
+    def test_search_filter(self, browser, open_search_result):
+        search_filter = MainPage(browser)
+
+        search_filter.click_show_more()
+        search_filter.click_russian()
+        search_filter.assert_label_result()
 
 
 class TestBusinessPage:
