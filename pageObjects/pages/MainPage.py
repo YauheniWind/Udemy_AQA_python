@@ -41,13 +41,18 @@ class MainPage(Helper):
         self.keyboard_click(self.elements.SEARCH_INPUT)
 
     def assert_find_python_courses(self):
-        assert self.current_url() == 'https://www.udemy.com/courses/search/?src=ukw&q=Python'
+        assert (
+            self.current_url()
+            == "https://www.udemy.com/courses/search/?src=ukw&q=Python"
+        )
 
     def select_business(self):
         self.mouse_moving(self.elements.UDEMY_BUSINESS)
 
     def assert_business_modal_window(self):
-        assert self.get_element_by_xpath(self.elements.BUSINESS_MODAL_WINDOW).is_displayed()
+        assert self.get_element_by_xpath(
+            self.elements.BUSINESS_MODAL_WINDOW
+        ).is_displayed()
 
     def click_try_business(self):
         self.mouse_click(self.elements.TRY_UDEMY_BUSINESS)
@@ -73,13 +78,19 @@ class MainPage(Helper):
         self.click_button(self.elements.RUSSIAN_LANGUAGE)
 
     def assert_title_change_language(self):
-        assert self.get_locator_by_xpath(self.elements.CHANGED_LANGUAGE_BANNER).text == self.elements.TITLE_IN_RUSSIAN
+        assert (
+            self.get_locator_by_xpath(self.elements.CHANGED_LANGUAGE_BANNER).text
+            == self.elements.TITLE_IN_RUSSIAN
+        )
 
     def select_basket(self):
         self.mouse_moving(self.elements.BASKET_CART)
 
     def assert_title_in_basket(self):
-        assert self.get_inner_text(self.elements.BASKET_MODAL_WINDOW) == self.elements.BASKET_EMPTY_TITLE
+        assert (
+            self.get_inner_text(self.elements.BASKET_MODAL_WINDOW)
+            == self.elements.BASKET_EMPTY_TITLE
+        )
 
     def add_product_in_basket(self):
         self.click_button(self.elements.ADD_TO_BASKET)
@@ -88,7 +99,10 @@ class MainPage(Helper):
         self.click_button(self.elements.CLOSE_POP_UP)
 
     def assert_product_in_basket(self):
-        assert self.get_inner_text(self.elements.PRODUCT_INFO_IN_BASKET) == self.elements.NAME_OF_PRODUCT
+        assert (
+            self.get_inner_text(self.elements.PRODUCT_INFO_IN_BASKET)
+            == self.elements.NAME_OF_PRODUCT
+        )
 
     def assert_banner_above_header(self):
         assert self.get_locator_by_xpath(self.elements.BANNER_ABOVE_HEADER)
@@ -131,7 +145,7 @@ class MainPage(Helper):
         ).is_displayed()
 
     def click_explore_python(self):
-        self.get_locator_by_contains_text('Explore Python')
+        self.get_locator_by_contains_text("Explore Python")
 
     def scroll_to_explore(self):
         self.scroll_to_element(self.elements.HOW_LEARN_TITLE)
@@ -166,11 +180,15 @@ class MainPage(Helper):
         self.click_button(self.elements.NEXT_BUTTON_HOW_LEARN)
 
     def assert_student_name_is_change(self):
-        assert self.get_inner_text(self.elements.STUDENTS_NAME, 3) == 'Surya M'
+        assert self.get_inner_text(self.elements.STUDENTS_NAME, 3) == "Surya M"
 
     def assert_info_in_cart_of_comment(self):
-        assert self.get_locator_by_xpath(self.elements.COMMENT_IN_HOW_LEARN).is_displayed()
-        assert self.get_locator_by_xpath(self.elements.NAME_OF_COURSE_IN_HOW_LEARN).is_displayed()
+        assert self.get_locator_by_xpath(
+            self.elements.COMMENT_IN_HOW_LEARN
+        ).is_displayed()
+        assert self.get_locator_by_xpath(
+            self.elements.NAME_OF_COURSE_IN_HOW_LEARN
+        ).is_displayed()
         assert self.get_locator_by_xpath(self.elements.STUDENTS_NAME).is_displayed()
 
     def click_course(self):

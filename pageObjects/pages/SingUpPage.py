@@ -16,8 +16,8 @@ class SingUpPage(Helper):
 
     def fill_registration_form(self):
         self.send_keys(self.elements.FULL_NAME_INPUT, "Yauheni Hraudzin")
-        self.send_keys(self.elements.EMAIL_INPUT, 'ev.evv@gmail.com')
-        self.send_keys(self.elements.PASSWORD, 'Na12My34')
+        self.send_keys(self.elements.EMAIL_INPUT, "ev.evv@gmail.com")
+        self.send_keys(self.elements.PASSWORD, "Na12My34")
 
     def assert_change_page(self):
-        assert self.current_url() == 'https://www.udemy.com/'
+        assert self.current_url() == "https://www.udemy.com/"

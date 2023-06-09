@@ -38,7 +38,6 @@ class TestMainPage:
         search.click_enter()
         search.assert_find_python_courses()
 
-
     def test_business_modal_window(self, browser, open_main_page):
         business_modal_window = MainPage(browser)
 

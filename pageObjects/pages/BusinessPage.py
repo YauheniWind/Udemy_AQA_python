@@ -30,4 +30,7 @@ class BusinessPage(Helper):
         self.click_button(self.elements.GET_IN_TOUCH_BUTTON)
 
     def assert_page(self):
-        assert self.current_url() != 'https://business.udemy.com/request-demo-mx/?locale=en_US&mx_pg=httpcachecontextsme-list&ref=ufb_header&user_type=visitor&utm_type=mx'
+        assert (
+            self.current_url()
+            != "https://business.udemy.com/request-demo-mx/?locale=en_US&mx_pg=httpcachecontextsme-list&ref=ufb_header&user_type=visitor&utm_type=mx"
+        )

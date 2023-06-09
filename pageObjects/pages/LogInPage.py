@@ -31,10 +31,13 @@ class LogInPage(Helper):
 
     def assert_apple_title(self):
         text = self.get_locator_by_xpath(self.elements.APPLE_TITLE).text
-        assert text == 'Apple ID'
+        assert text == "Apple ID"
 
     def click_log_in(self):
         self.click_button(self.elements.LOG_IN_BUTTON)
 
     def assert_page_not_change(self):
-        assert self.current_url() == 'https://www.udemy.com/join/login-popup/?persist_locale=&locale=en_US'
+        assert (
+            self.current_url()
+            == "https://www.udemy.com/join/login-popup/?persist_locale=&locale=en_US"
+        )
