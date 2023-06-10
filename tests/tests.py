@@ -306,3 +306,8 @@ class TestCart:
 
         buy_now.click_buy_now()
         buy_now.check_url()
+
+    def test_info_cart(self, browser, open_cart_page):
+        info_cart = CartPage(browser)
+
+        info_cart.assert_cart_info()
