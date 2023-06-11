@@ -10,3 +10,7 @@ class TestAPI:
     def test_create_tasks(self):
         create_tasks = HttpRequestsService()
         create_tasks.test_create_task()
+
+    def test_update_task(self):
+        update_task = HttpRequestsService()
+        update_task.test_update_data()
