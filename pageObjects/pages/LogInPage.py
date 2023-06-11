@@ -1,5 +1,3 @@
-import time
-
 from Helper import Helper
 from pageObjects.locators.LogInLocators import LogInLocators
 

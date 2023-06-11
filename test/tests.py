@@ -1,5 +1,3 @@
-import time
-
 from pageObjects.pages.LogInPage import LogInPage
 from pageObjects.pages.MainPage import MainPage
 from pageObjects.pages.BusinessPage import BusinessPage
