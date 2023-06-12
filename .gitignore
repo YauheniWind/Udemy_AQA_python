@@ -6,3 +6,4 @@ core/hw_6/new_one.py
 geckodriver.log
 *.pdf
 *.jpeg
+allure_report
