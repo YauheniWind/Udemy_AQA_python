@@ -1,3 +1,5 @@
+import allure
+
 from pageObjects.pages.LogInPage import LogInPage
 from pageObjects.pages.MainPage import MainPage
 from pageObjects.pages.BusinessPage import BusinessPage
@@ -7,7 +9,10 @@ from pageObjects.pages.CartPage import CartPage
 
 
 class TestMainPage:
+    @allure.title("Main Page Test")
     # ---------- HEADER -------------
+
+    @allure.title("Main Page Test: Test logo")
     def test_logo(self, browser, open_main_page):
         logo_test = MainPage(browser)
 
@@ -15,6 +20,7 @@ class TestMainPage:
         logo_test.click_on_logo()
         logo_test.check_url()
 
+    @allure.title("Main Page Test: Test subcategories")
     def test_categories(self, browser, open_main_page):
         categories_test = MainPage(browser)
 
@@ -22,6 +28,7 @@ class TestMainPage:
         categories_test.mouse_moving_to_categories()
         categories_test.find_element_sub_categories()
 
+    @allure.title("Main Page Test: Test select option from subcategories")
     def test_choose_developer_from_categories(self, browser, open_main_page):
         choose_developer = MainPage(browser)
 

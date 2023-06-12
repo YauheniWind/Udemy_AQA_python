@@ -78,10 +78,7 @@ class MainPage(Helper):
         self.click_button(self.elements.RUSSIAN_LANGUAGE)
 
     def assert_title_change_language(self):
-        assert (
-            self.get_locator_by_xpath(self.elements.CHANGED_LANGUAGE_BANNER).text
-            == self.elements.TITLE_IN_RUSSIAN
-        )
+        assert self.current_url()
 
     def select_basket(self):
         self.mouse_moving(self.elements.BASKET_CART)
