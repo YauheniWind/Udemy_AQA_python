@@ -1,15 +1,18 @@
 import requests
 import uuid
+import allure
 
 url = "https://todo.pixegami.io"
 
 
 class HttpRequestsService:
+    @allure.step("get response 200")
     def test_get_status_200(self):
         response = requests.request("GET", url)
 
         assert response.status_code == 200
 
+    @allure.step("created task")
     def test_create_task(self):
         payload = self.new_task()
 
@@ -25,6 +28,7 @@ class HttpRequestsService:
         assert get_data_task["user_id"] == payload["user_id"]
         assert get_data_task["content"] == payload["content"]
 
+    @allure.step("updated task")
     def test_update_data(self):
         payload = self.new_task()
         create_task = self.create_task(payload)
@@ -44,6 +48,7 @@ class HttpRequestsService:
         assert get_data["content"] == new_payload["content"]
         assert get_data["is_done"] == new_payload["is_done"]
 
+    @allure.step("get list of tasks")
     def test_get_list_tasks(self):
         payload = self.new_task()
         for _ in range(3):
@@ -58,6 +63,7 @@ class HttpRequestsService:
         tasks = data["tasks"]
         assert len(tasks) == 3
 
+    @allure.step("deleted task")
     def test_delete_task(self):
         payload = self.new_task()
         create_task = self.create_task(payload)
