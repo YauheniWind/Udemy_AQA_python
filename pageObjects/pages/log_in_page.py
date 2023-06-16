@@ -1,10 +1,10 @@
 import allure
 
-from Helper import Helper
-from pageObjects.locators.LogInLocators import LogInLocators
+from base_page import BasePage
+from pageObjects.locators.log_in_locators import LogInLocators
 
 
-class LogInPage(Helper):
+class LogInPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 

@@ -1,10 +1,10 @@
 import allure
 
-from Helper import Helper
-from pageObjects.locators.SingUpLocators import SingUpLocators
+from base_page import BasePage
+from pageObjects.locators.sing_up_locators import SingUpLocators
 
 
-class SingUpPage(Helper):
+class SingUpPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 

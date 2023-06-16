@@ -1,10 +1,10 @@
 import allure
 
-from Helper import Helper
-from pageObjects.locators.TeachLocators import TeachLocators
+from base_page import BasePage
+from pageObjects.locators.teach_locators import TeachLocators
 
 
-class TeachPage(Helper):
+class TeachPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 

@@ -1,10 +1,10 @@
 import allure
 
-from Helper import Helper
-from pageObjects.locators.BusinessLocators import BusinessLocators
+from base_page import BasePage
+from pageObjects.locators.business_locators import BusinessLocators
 
 
-class BusinessPage(Helper):
+class BusinessPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 

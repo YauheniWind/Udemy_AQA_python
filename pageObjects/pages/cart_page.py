@@ -1,10 +1,10 @@
 import allure
 
-from pageObjects.locators.CartLocators import CartLocators
-from Helper import Helper
+from pageObjects.locators.cart_locators import CartLocators
+from base_page import BasePage
 
 
-class CartPage(Helper):
+class CartPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 

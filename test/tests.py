@@ -1,11 +1,11 @@
 import allure
 
-from pageObjects.pages.LogInPage import LogInPage
-from pageObjects.pages.MainPage import MainPage
-from pageObjects.pages.BusinessPage import BusinessPage
-from pageObjects.pages.SingUpPage import SingUpPage
-from pageObjects.pages.TeachPage import TeachPage
-from pageObjects.pages.CartPage import CartPage
+from pageObjects.pages.log_in_page import LogInPage
+from pageObjects.pages.main_page import MainPage
+from pageObjects.pages.business_page import BusinessPage
+from pageObjects.pages.sing_up_page import SingUpPage
+from pageObjects.pages.teach_page import TeachPage
+from pageObjects.pages.cart_page import CartPage
 
 
 @allure.suite("Main Page")
