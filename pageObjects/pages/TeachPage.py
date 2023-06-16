@@ -56,7 +56,7 @@ class TeachPage(Helper):
 
     @allure.step("displayed none element")
     def none_element(self):
-        self.display_none(self.elements.CONTAINER_COOKIE)
+        self.send_display_none(self.elements.CONTAINER_COOKIE)
 
     @allure.step("scrolled to support teacher")
     def scroll_to_support_teacher(self):

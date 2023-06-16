@@ -12,7 +12,7 @@ class BusinessPage(Helper):
 
     @allure.step("hided element")
     def none_element(self):
-        self.display_none(self.elements.CONTAINER_COOKIE)
+        self.send_display_none(self.elements.CONTAINER_COOKIE)
 
     @allure.step("checked element is displayed")
     def assert_logo_is_displayed(self):
