@@ -51,8 +51,8 @@ class Helper:
         return self.get_locator_by_css(selector).is_selected()
 
     def scroll_to_element(self, locator):
-        iframe = self.get_locator_by_xpath(locator)
-        return ActionChains(self.driver).scroll_to_element(iframe).perform()
+        element = self.get_locator_by_xpath(locator)
+        return ActionChains(self.driver).scroll_to_element(element).perform()
 
     def scroll_to_element_offset(self, locator, scroll_offset):
         actions = ActionChains(self.driver)
@@ -65,12 +65,6 @@ class Helper:
     def select_value_from_dropdown(self, value):
         element = self.get_locator_by_xpath(value)
         element.click()
-
-    def select_checkbox(self, locator, value=True):
-        element = self.get_locator_by_xpath(locator)
-        current_check = element.is_selected()
-        if current_check != value:
-            element.click()
 
     def click_button(self, locator, index=0):
         element = self.get_locator_by_xpath(locator, index)
@@ -92,12 +86,7 @@ class Helper:
 
     def get_attribute_(self, locator, value):
         element = self.get_locator_by_xpath(locator)
-        if value == "class":
-            return element.get_attribute("class")
-        elif value == "placeholder":
-            return element.get_attribute("placeholder")
-        else:
-            return element.get_attribute("value")
+        return element.get_attribute(value)
 
     def waiting_element(self, locator):
         return WebDriverWait(self.driver, 10).until(
@@ -149,13 +138,17 @@ class Helper:
         key = self.get_locator_by_xpath(locator)
         return key.send_keys(text)
 
-    def display_none(self, locator):
+    def send_display_none(self, locator):
         element = self.get_locator_by_xpath(locator)
-        return self.driver.execute_script("arguments[0].style.display = 'none';", element)
+        return self.driver.execute_script(
+            "arguments[0].style.display = 'none';", element
+        )
 
-    def display_block(self, locator):
+    def send_display_block(self, locator):
         element = self.get_locator_by_xpath(locator)
-        return self.driver.execute_script("arguments[0].style.display = 'block';", element)
+        return self.driver.execute_script(
+            "arguments[0].style.display = 'block';", element
+        )
 
     def select_option(self, locator, text):
         drop = self.get_locator_by_xpath(locator)
@@ -178,7 +171,7 @@ class Helper:
 
     def get_inner_text(self, locator, index=0):
         element = self.get_locator_by_xpath(locator, index)
-        return element.get_attribute('innerText')
+        return element.get_attribute("innerText")
 
     def js_click(self, locator, index=0):
         element = self.get_locator_by_xpath(locator, index)
