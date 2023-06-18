@@ -1,18 +1,11 @@
 import pytest
-import time
-import os
-from pathlib import Path
-from slugify import slugify
 
-from allure_commons import fixture
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.core.utils import ChromeType
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 
-from datetime import datetime
-from selenium import webdriver as selenium_webdriver
 from selenium.webdriver.chrome.options import Options
 
 
